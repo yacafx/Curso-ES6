@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <script>
+    const llave = "abc123";
+    var nombre = "Juan";
+    let apellido = "Hernandez";
+    const pizza = "Pepperoni!  🍕🍕🍕";
+    console.log(pizza)
+
+    const persona = {
+      nombre: "Sergio",
+      edad: "34"
+    }
+
+    const nuevaPersona = Object.freeze(persona);
+
+    for (let i = 0; i < 10; i++) {
+      console.log(i);
+      setTimeout(function () {
+        console.log('El for acabo hace rato: ', i)
+      }, 5000)
+      //console.log('Apellido adentro: ', apellido)
+    }
+
+
+    //console.log('afuera del for: ', i)
+    //console.log('Apellido afuera: ', apellido)
+  </script>
+</body>
+
+</html>
