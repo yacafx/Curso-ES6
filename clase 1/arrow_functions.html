@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .myButton {
+      width: 300px;
+      height: 300px;
+      background-color: mediumseagreen;
+      color: white;
+      text-align: center;
+      padding-top: 50px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    
+    .red {
+      background-color: red;
+    }
+    
+    .blue {
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="myButton" id="test" type="button">Click me!</div>
+  <script>
+    const names = ['Victor', 'Alberto', 'Sergio'];
+
+    const fullNames = names.map(function (name) {
+      return `${name} Lopez`;
+    })
+
+    const fullNames2 = names.map((name) => {
+      return `${name} Lopez`;
+    })
+
+    const fullNames3 = names.map(name => {
+      return `${name} Lopez`;
+    })
+
+    const fullNames4 = names.map(name => `${name} Lopez`);
+
+    const fullNames5 = names.map(() => `Lopez`);
+
+
+    const sayHi = (name) => {
+      console.log(`Hola ${name}`);
+    }
+
+    //*** Default arguments
+
+    function area(base, height = 10, cube = .314) {
+      console.log('base: ', base, 'height: ', height, 'cube: ', cube);
+      return cube * (base * height / 2);
+    }
+
+    //*** This
+    const myButton = document.querySelector('.myButton');
+
+    // myButton.addEventListener('click', function () {
+    //   //console.log('The button has been clicked!');
+    //   console.log(this.id)
+    // })
+
+    myButton.addEventListener('click', function () {
+      //console.log(this)
+      this.classList.toggle('red')
+      setTimeout(() => {
+        this.classList.toggle('blue')
+      }, 1000);
+    })
+
+
+
+
+
+
+
+
+
+    //** Anonymous function
+    // function (name) {
+    //   return `${name} Lopez`;
+    //   }
+
+
+    //   //** Arrow Function
+    //  (name) => {
+    //   return `${name} Lopez`;
+    // }
+
+    //   //** Arrow Function
+    //  name => {
+    //   return `${name} Lopez`;
+    // }
+  </script>
+</body>
+
+</html>
