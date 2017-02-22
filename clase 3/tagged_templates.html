@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+    .hl{
+      background-color: #ffc600;
+      padding:10px;
+      border-radius: 5px;
+    }
+ </style>
+</head>
+
+  <body>
+
+  <script>
+
+    const dict = {
+      HTML: 'Hyper Text Markup Language',
+      JS: 'JavaScript'
+    }
+
+
+  //REST parameters
+    function highlight(strings, ...values){
+      // console.log('strings', strings);
+      // console.log('values', values);
+      //return values;
+      let str = '';
+
+      strings.forEach((string, i)=>{
+        console.log(string, i)
+        console.log(values[i]||'');
+        if(string){
+          str += `${string} <span contenteditable class="hl">${values[i] || '' }</span>`;
+        }
+      })
+      return str;
+    }
+
+    function saludar(nombre, ...apellidos){
+      console.log(nombre, apellidos)
+      apellidos.forEach(apellido=>{
+        console.log(nombre+ ' ' +apellido)
+      })
+    }
+
+    //saludar('Jose', 'Perez', 'Romero', 'Lopez');
+
+    // function sum(a,b){
+    //   return a+b;
+    // }
+
+    // const result = sum(3,5);
+
+ 
+    const name = "Aston Martin";
+    const type = "Deportivo";
+
+    const sentence = highlight`El auto ${name} es de tipo ${type}`;
+    document.body.innerHTML = sentence;
+
+  </script>
+</body>
+
+</html>

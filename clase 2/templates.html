@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+</head>
+
+<body>
+
+  <script>
+    const name = 'Sanson';
+
+    const age = 10;
+
+    const sentence = `Mi perro ${name} tiene ${age} años`;
+
+    const markup = `
+      <div class="card">
+        <h2>Todo sobre ${name}</h2>
+        <p>
+          ${sentence}
+        </p>
+      </div>
+    `;
+
+    const car = {
+      name: 'McQueen',
+      type: 'Sport',
+      color: 'rojo',
+      tags: ['rápido', 'furioso','estable','confiable']
+    }
+
+    function renderTags(tags){
+      return `
+         ${car.tags.map(tag =>
+            `<li>
+                ${tag}
+            </li>`
+          ).join('')}
+      `;
+    }
+
+    const markup2 = `
+      <div class="card">
+        <p>
+          ${car.name} - ${car.type}
+          <br />
+          ${car.color ? `(Color: ${ car.color })` : 'Sin info'}
+        </p>
+        <ul class="tags">
+          ${renderTags(car.tags)}
+        </ul>
+      </div>
+    `;
+
+    const cars = [
+      {name: 'Aston Martin', color: 'Gris'},
+      {name: 'Bugati', color: 'Rojo'},
+      {name: 'Ferrari', color: 'Amarillo'},
+      {name: 'Tesla', color: 'Verde'}
+    ];
+
+    const markup3 = `
+      <ul class="cars">
+        ${cars.map(car =>
+            `<li>
+                ${car.name} - ${car.color}
+            </li>`
+          ).join('')}
+      </ul>
+    `;
+
+
+
+    console.log(markup2);
+    document.body.innerHTML = markup2;
+
+  </script>
+</body>
+
+</html>
