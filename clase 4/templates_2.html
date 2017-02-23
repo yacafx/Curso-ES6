@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+</head>
+
+<body>
+
+  <div class="bio"></div>
+
+  <script>
+    
+    const dict = {
+    HTML: 'Hyper Text Markup Language',
+    CSS: 'Cascading Style Sheets',
+    JS: 'JavaScript'
+  };
+
+  function addAbbreviations(strings, ...values) {
+    const abbreviated = values.map(value => {
+      //console.log(value, dict[value])
+      // dict.Sergio = 'nomas pa ver';
+      // console.log(value, dict[value])
+      if(dict[value]) {
+        return `<abbr title="${dict[value]}">${value}</abbr>`
+      }
+
+      
+      return value;
+    });
+  // var final = '';
+
+  // for (var i=0; i < strings.length; i++){
+  //   final += strings[i]+(abbreviated[i]||'');
+  // }
+
+  return strings.reduce((accumulator, string, i)=>{
+    return  accumulator + '-'+string+(abbreviated[i]||'');
+  })
+
+ //acummulator += string+(abbreviated[i]||'');
+
+  //return final;
+ 
+  }
+    
+  const first = 'Sergio';
+  const last = 'Brito';
+  const sentence = addAbbreviations`Hi my name is ${first} ${last} and I love to code ${'JS'}, ${'HTML'} and ${'CSS'} all day and all night long!`
+
+  const bio = document.querySelector('.bio');
+  const p = document.createElement('p');
+  p.innerHTML = sentence;
+  bio.appendChild(p);
+
+
+  </script>
+</body>
+
+</html>
