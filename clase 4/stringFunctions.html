@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <script>
+      const course = 'MVS2017';
+      const flightNumber = 'CDMXAM750';
+      const account = '1239876245';
+
+      const brand = 'BMW';
+      const model = 'Z3';
+      const colour = 'Negro';
+
+      console.log('startsWith: ',course.startsWith('MVS'));
+      console.log('endsWith: ',account.endsWith('45'));
+      console.log('includes: ',flightNumber.includes('AM'));
+
+      //repeat
+      function leftPad(char ,str, length = 10){
+        return `${char.repeat(length - str.length)}${str}`
+      }
+
+      console.log(leftPad('+', brand));
+      console.log(leftPad('-',model));
+      console.log(leftPad('*',colour));
+
+      console.log(flightNumber.repeat(6))
+
+    </script>
+  </body>
+</html>

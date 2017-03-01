@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <script>
+    // const person = {
+    //   name: 'Steve',
+    //   lastname: 'Jobs',
+    //   country: 'Aleman',
+    //   city: 'Berlin',
+    //   twitter: '@jobs'
+    // }
+
+
+    const person = {
+      name: 'Steve',
+      lastname: 'Jobs',
+      country: 'Aleman',
+      city: 'Berlin',
+      social: {
+        twitter: '@jobs',
+        facebook: 'facebook.com/jobs',
+        instagram: 'ins.ta/jobs'
+      },
+      hobbies: {
+        sports: {
+          football: {
+            soccer: 'Pumas',
+            football: '49ers'
+          }
+        }
+      }
+    }
+
+    let {
+      soccer: fut,
+      football: tocho
+    } = person.hobbies.sports.football;
+
+    const {
+      twitter: tweet,
+      facebook: fb,
+      instagram: ins
+    } = person.social
+
+    const settings = {
+      width: 300,
+      color: 'black'
+    }
+
+    const {
+      width = 500, color, height = 100
+    } = settings;
+
+    const details = ['Mark', 'Wosniak', '@woz'];
+
+    const [name2, lastname2, twitter2] = details;
+
+    //console.log(name2, lastname2, twitter2)
+
+    //****************//
+
+    const data = 'Cruz Azul, Conejo Perez, Ojitos Meza, 5, azul';
+
+    const [team, player, dt, champs, tColor] = data.split(',');
+
+    //console.log(team, player, dt, champs, tColor)
+
+
+    //****************//
+
+    //... - Rest parameters
+
+    const barcelona = ['Pep Guardiola', 'Messi', 'Xavi', 'Marquez', 'Dos Santos', 'Puyol'];
+
+    const [bDt, bPlayer, ...players] = barcelona;
+
+
+    //const {name, lastname, twitter} = person;
+
+    // name = person.name
+    // lastname = person.lastname
+    // twitter = person.twitter
+
+    function convertCurrency(ammount) {
+      const converted = {
+        USD: ammount * 20,
+        GPB: ammount * 24,
+        PEN: ammount * 6.50,
+        EUR: ammount * 21.35
+      };
+
+      return converted;
+    }
+
+    var conversion = convertCurrency(120)
+
+    const {
+      USD,
+      GPB,
+      PEN,
+      EUR
+    } = convertCurrency(150);
+
+    function tipCalc({total = 100, tip = 0.15, tax = 0.16}={}){
+      return total + (tip*total) + (tax*total);
+    }
+
+    const bill = tipCalc({tip: 0, total: 500})
+    
+
+    let inField = 'Chicharito';
+    let outField = 'Gotze';
+
+    console.log(inField, '||' ,outField);
+
+    [inField, outField] = [outField, inField];
+
+    console.log(inField, '||' , outField);
+
+
+  </script>
+</body>
+
+</html>
