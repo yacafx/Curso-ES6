@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <p>Parrafo 1</p>
+  <p>Parrafo 2</p>
+  <p>Parrafo 3</p>
+  <p>Parrafo 4</p>
+  <p>Parrafo 5</p>
+  <p>Parrafo 6</p>
+  <p>Parrafo 7</p>
+  <p>Parrafo 8</p>
+  <p>Parrafo 9</p>
+  <p>Parrafo 10</p>
+  <script>
+    const cuts = ['Rib Eye', 'Cuadril', 'Vacio', 'Picaña'];
+
+    cuts.shop = 'La Laguna';
+
+    // Array.prototype.shuffle = function () {
+    //   return 2 + 2;
+    // }
+
+    for (const [i, cut] of cuts.entries()) {
+      //console.log(i, cut)
+      // console.log(`El corte número ${i+1} de ${cuts.shop} es ${cut}`)
+    }
+
+    const name = 'Sergio Brito'
+
+    for (const char of name) {
+      //console.log(char);
+    }
+
+
+    function addUpNumbers() {
+      let total = 0;
+      //console.log('arguments:', arguments)
+      for (const num of arguments) {
+        // console.log('indice ', num)
+        total += num;
+      }
+      //console.log(total)
+      return total;
+    }
+
+    addUpNumbers(1, 3, 5, 7, 9)
+
+
+    // cuts.forEach((cut) => {
+    //   console.log(cut)
+    //   // if (cut == 'Cuadril') {
+    //   //   continue;
+    //   // }
+    // })
+
+    for (const cut of cuts) {
+      //console.log(cuts[cut])
+      //console.log(cut)
+      // if (cut == 'Cuadril') {
+      //   break;
+      // }
+    }
+
+    const dish = {
+      type: 'Mexicano',
+      price: '$100 mxn',
+      name: 'Tacos',
+      portion: '5'
+    }
+
+    for (const prop in dish) {
+      const value = dish[prop];
+
+      //console.log(value, prop)
+    }
+
+
+    const paragraphs = document.querySelectorAll('p');
+    for (const paragraph of paragraphs) {
+      paragraph.addEventListener('click', function () {
+        console.log(this.textContent)
+      })
+    }
+  </script>
+</body>
+
+</html>
