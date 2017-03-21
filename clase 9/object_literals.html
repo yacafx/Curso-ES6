@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <script>
+    const first = 'Pancho';
+    const last = 'Pantera';
+    const age = '80';
+    const flavour = 'Chocolate';
+
+    const milk = {
+      first,
+      last,
+      age,
+      flavour,
+      pets: ['dog', 'cat']
+    }
+
+    const pet ={
+      bark : function(){
+        console.log('Estoy ladrando')
+      },
+      run(speed){
+        console.log(`Estoy corriendo ${speed}`)
+      },
+      rest: () => console.log('Estoy durmiendo') 
+    }
+
+    function setPetSize(){
+      return 'Pequeño';
+    }
+
+    const key = 'petType';
+    const value = 'Perro';
+
+    const myPet = {
+      [key]: value,
+      [`${key}Size`]: setPetSize()
+    }
+
+    const keys = ['size', 'color', 'weight'];
+    const values = ['pequeño', 'cafe', '2kg'];
+
+    const sanson = {
+      [keys.shift()]: values.shift(),
+      [keys.shift()]: values.shift(),
+      [keys.shift()]: values.shift()
+    }
+
+
+  </script>
+</body>
+
+</html>

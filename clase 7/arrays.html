@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="meals">
+    <p>Pizzas</p>
+    <p>Hamburguesas</p>
+    <p>Hotdogs</p>
+    <p>Ensaladas</p>
+    <p>Palomitas</p>
+  </div>
+  <script>
+    const meals = document.querySelectorAll('.meals p')
+
+    // const mealsArray = Array.from(meals, meal => {
+    //   console.log(meal);
+    //   return meal.textContent;
+    // });
+
+    // console.log(mealsArray);
+
+    const baseMeals = Array.from(meals)
+    //const myMeals = meals.map(meal => meal.textContent)
+    const myMeals = baseMeals.map(meal => meal.textContent)
+    //console.log(myMeals)
+
+
+    function sumAll() {
+      let nums = arguments;
+      //console.log('Sin from: ', nums);
+      nums = Array.from(arguments);
+      // console.log('Con from: ', nums);
+      return nums.reduce((prev, next) => prev + next, 0)
+    }
+
+    sumAll(10, 22, 33);
+
+
+
+    const ages = Array.of(12, 23, 18, 19, 20, 45, 24);
+
+    //console.log('Ages: ', ages);
+
+
+    //** .some()
+
+    const anyAdult = ages.some(age => age >= 18);
+    console.log(anyAdult)
+
+    //** .every()
+    const canDrink = ages.every(age => age >= 10);
+    console.log(canDrink)
+
+    const books = [{
+      "code": "rw_20",
+      "title": "El Imperio de los Topos",
+      "likes": "220"
+    }, {
+      "code": "rw_220",
+      "title": "Ready Player One",
+      "likes": "205"
+    }, {
+      "code": "rw_250",
+      "title": "La historia de la Republica",
+      "likes": "202"
+    }, {
+      "code": "rw_2305",
+      "title": "The Strain",
+      "likes": "220"
+    }, {
+      "code": "rw_750",
+      "title": "Harry Potter",
+      "likes": "230"
+    }];
+
+    const code = "rw_2305";
+
+    const myBook = books.find(book => book.code === code);
+    console.log(myBook);
+
+    const myBookIndex = books.findIndex(book => book.code === code);
+    console.log(myBookIndex);
+  </script>
+</body>
+
+</html>

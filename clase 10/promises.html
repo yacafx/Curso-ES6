@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <script>
+
+  const postPromise = fetch('https://restcountries.eu/rest/v2/all');
+
+  postPromise
+    .then(data => data.json())
+    .then(data => data[0])
+ //   .then(data => console.log(data))
+    .catch(error => console.log(error))
+
+function getAllData(id){
+  let allData = {
+    id,
+    name: 'Aston Martin',
+    dish: 'Huevos Rancheros'
+  }
+
+  allData= null;
+
+  return allData;
+}
+
+
+const status = true;
+
+const p = new Promise((resolve, reject)=>{
+  let allData = getAllData('1322');
+
+  if(allData){
+    resolve(allData);
+  } else {
+    reject(Error('Meeeh! Algo salió mal'));
+  }
+});
+
+p
+  .then(data => console.log('Datos recibidos: ', data))
+
+
+  </script>
+</body>
+
+</html>

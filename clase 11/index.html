@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <script>
+
+  const posts = [
+    {title: 'The cave', author: 'Juan Pistolas', id: 1},
+    {title: 'Closure', author: 'Eric Elliot', id: 2},
+    {title: 'El patron', author: 'Sergio Brito', id: 3}
+  ]
+
+  const authors = [
+    { name: 'Eric Elliot', twitter: '@_ericelliot', bio: 'JS Jedi' },
+    { name: 'Juan Pistolas', twitter: '@eljuan', bio: 'El pipiripau' },
+    { name: 'Sergio Brito', twitter: '@yacafx', bio: 'Web Developer' }
+  ]
+
+  function getPostById(id){
+    return new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        const post = posts.find(post => post.id === id);
+
+        if(post){
+          resolve(post);
+        } else {
+          reject(Error('No hay post con ese id'));
+        }
+
+      },3000)
+    })
+  }
+
+  function populateAuthor(post){
+    return new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        const authorDetails = authors.find(author => author.name === post.author);
+        if(authorDetails){
+          post.author = authorDetails
+          resolve(post);
+        } else {
+          reject(Error('No se encontró el autor'));
+        }
+      }, 2000)
+    })
+  }
+
+  getPostById(1)
+    .then(post => {
+      return populateAuthor(post);
+    })
+    .then(author => {
+      console.log(author);
+    })
+    .catch(err => {
+      console.error(err);
+    })
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="persons">
+    <p>Victor</p>
+    <p>Alberto</p>
+    <p>Sergio</p>
+  </div>
+  <script>
+    //** Rest
+    const runner = ['Usain Bolt', 'rn_1024', 10, 15, 20, 30];
+
+    const [name, id, ...runs] = runner;
+
+    //** Spread
+
+    const featured = ['Pepperoni', 'Hawaiana', 'Italiana'];
+
+    const specialty = ['Chicago', 'Spicy', 'De Sarten'];
+
+
+
+    const deepDish = {
+      pizzaName: 'Deep Dish',
+      size: 'Medium',
+      ingredients: ['Pescado', 'Queso', 'Tomate']
+    }
+
+    const pizzas = [...featured, 'veggie', deepDish.pizzaName, ...specialty];
+
+    //** Spread in a function
+
+    const inventors = ['Einstein', 'Edison', 'Tesla'];
+
+    const newInventors = ['Jobs', 'Musk'];
+
+    inventors.push(...newInventors);
+    //console.log(inventors);
+
+    const people = ['Victor', 'Alberto']
+
+    function sayHi(first, last) {
+      //console.log(`Hola ${first} y ${last}`);
+
+      //Hola Victor y Alberto      
+    }
+
+    sayHi(...people)
+
+    const persons = Array.from(document.querySelectorAll('.persons p'))
+    const names = persons.map((person) => person.textContent);
+
+    const shoppingList = ['Leche', 'Jamón', ...deepDish.ingredients];
+
+
+    const comments = [{
+        id: 1234,
+        texts: 'Muy buen artículo'
+      },
+      {
+        id: 2345,
+        texts: 'El mejor texto ever'
+      },
+      {
+        id: 3456,
+        texts: 'Super!'
+      },
+      {
+        id: 4567,
+        texts: 'Lo máximo!!!'
+      }, ,
+      {
+        id: 4567,
+        texts: 'Lo máximo!!!'
+      },
+      {
+        id: 4567,
+        texts: 'Lo máximo!!!'
+      },
+      {
+        id: 4567,
+        texts: 'Lo máximo!!!'
+      },
+      {
+        id: 4567,
+        texts: 'Lo máximo!!!'
+      }
+    ]
+
+    const idC = 3456;
+    const commentIndex = comments.findIndex(comment => comment.id == idC);
+
+    const newComments = [...comments.slice(0, commentIndex), ...comments.slice(commentIndex + 1)];
+
+    console.log(newComments);
+  </script>
+</body>
+
+</html>

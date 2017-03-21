@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <script>
+    const radio = Symbol('MVS');
+    const person = Symbol('Radio');
+
+    const classRoom = {
+      [Symbol('Hugo')]: {grade: 70, gender: 'hombre'},
+      [Symbol('Paco')]: {grade: 80, gender: 'hombre'},
+      [Symbol('Lucia')]: {grade: 100, gender: 'mujer'},
+      [Symbol('Susana')]: {grade: 90, gender: 'mujer'}
+    }
+
+    for(const person in classRoom){
+      console.log(person)
+    }
+
+    const syms = Object.getOwnPropertySymbols(classRoom)
+    
+    for(const sym in syms){
+          console.log(classRoom[syms[sym]])
+    }
+
+    const data = syms.map(sym => classRoom[sym]);
+    console.log(data)
+
+  </script>
+</body>
+
+</html>
